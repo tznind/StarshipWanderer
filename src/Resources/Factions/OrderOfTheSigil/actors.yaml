@@ -1,0 +1,11 @@
+﻿- Name: 
+  OptionalAdjectives:
+    - Strong
+    - Tough
+- Name: # Gets a random name
+  OptionalAdjectives:
+    - Strong
+  Stats:
+    Fight: 20
+    Loyalty: -10
+    Coerce: 15
