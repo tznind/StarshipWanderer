@@ -1,5 +1,6 @@
 # StarshipWanderer
-prototype / example game written using the Wanderer engine
+
+Prototype / example game written using the [Wanderer engine](https://github.com/tznind/Wanderer)
 
 ![Black and white drawing of a wastelander looking at a distant spire][splash]
 
@@ -9,3 +10,5 @@ Stalk the abandoned corridors and burned out machine rooms of a city sized stars
 
 [gameplay]: ./images/gameplay.gif
 [Splash]: ./images/splash.png
+
+
