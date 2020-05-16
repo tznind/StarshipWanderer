@@ -13,7 +13,6 @@
   Stats: 
     Fight: 2
     Value: 2
-    Suave: -5
   Slot:
     Name: Head
     NumberRequired: 1
@@ -27,7 +26,6 @@
 - Name: Head Lamp
   Stats:
     Savvy: 10
-    Suave: -5
     Value: 5
   Slot:
     Name: Head
@@ -38,7 +36,6 @@
   Stats:
     Fight: 3
     Value: 3
-    Suave: -2
   Slot:
     Name: Chest
     NumberRequired: 1
