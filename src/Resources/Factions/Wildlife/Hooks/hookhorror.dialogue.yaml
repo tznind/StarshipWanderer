@@ -27,7 +27,7 @@
   Options:
     - Text: Ok
       Effect: 
-        - Recipient.Dialogue.Next = null
+        - Lua: Recipient.Dialogue.Next = null
       Attitude: -100
 
 
@@ -39,7 +39,7 @@
     Destination: e96e2822-dc7a-421e-a7c7-43c28add9f6a
     Effect:
        # now that it is docile, start new dialogues at detailed inspection
-      - Recipient.Dialogue.Next = Guid('e96e2822-dc7a-421e-a7c7-43c28add9f6a')
+      - Lua: Recipient.Dialogue.Next = Guid('e96e2822-dc7a-421e-a7c7-43c28add9f6a')
     Attitude: 10
 
 #After rendering docile
@@ -52,19 +52,19 @@
       - Lua: AggressorIfAny:Has('Flame Projector')
     Attitude: 100
     Effect:
-       - Recipient:SpawnAction('Leave')
+       - Lua: Recipient:SpawnAction('Leave')
  #     - Recipient:SpawnBehaviour('FollowPlayer')
   - Text: Use Medic
     Condition:
       - Lua: AggressorIfAny:Has('Medic')
     Attitude: 100
     Effect:
-       - Recipient:SpawnAction('Leave')
+       - Lua: Recipient:SpawnAction('Leave')
 #      - Recipient:SpawnBehaviour('FollowPlayer')
     
   - Text: Put the creature out of it's misery
     Effect:
-      - Recipient:Kill(UserInterface,Round,'mercy killing')
+      - Lua: Recipient:Kill(UserInterface,Round,'mercy killing')
   - Text: Leave
 
   # Throw a stone
@@ -80,6 +80,6 @@
   Options:
     - Text: Ok
       Effect: 
-        - Recipient.Dialogue.Next = null
+        - Lua: Recipient.Dialogue.Next = null
       Attitude: -100
       

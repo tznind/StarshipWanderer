@@ -14,7 +14,8 @@
   Condition:
     - Lua: Room.Items.Count > 0
     - Lua: Recipient:Has('PickUp')
-  Do: return PickUpFrame(Recipient,FirstOrDefault(Recipient:Get('PickUp')),FirstOrDefault(Room.Items),Room,0)
+  Do: 
+    Lua: return PickUpFrame(Recipient,FirstOrDefault(Recipient:Get('PickUp')),FirstOrDefault(Room.Items),Room,0)
 - Name: Equip Stuff
   Condition:
     - Lua: GetFirstEquippableItem(Recipient) ~= nil
