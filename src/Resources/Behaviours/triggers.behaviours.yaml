@@ -2,9 +2,9 @@
   Identifier: 6ac0f722-2c2d-4e14-8c36-21b249d657d0
   OnEnter: 
    Condition: 
-     - return AggressorIfAny == World.Player
-     - return Room == Behaviour.Owner
-     - return Room.Dialogue.Next ~= nil
+     - Lua: return AggressorIfAny == World.Player
+     - Lua: return Room == Behaviour.Owner
+     - Lua: return Room.Dialogue.Next ~= nil
    Effect: 
-     - World.Dialogue:Apply(SystemArgs(World,UserInterface,0,AggressorIfAny,Room,Round))
-     - Room.Dialogue.Next = null
+     - Lua: World.Dialogue:Apply(SystemArgs(World,UserInterface,0,AggressorIfAny,Room,Round))
+     - Lua: Room.Dialogue.Next = null

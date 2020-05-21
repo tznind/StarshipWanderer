@@ -70,4 +70,4 @@
       Stats: 
          Fight: 30
       Effect:
-        - SplashDamage(Action.InjurySystem,20,true)
+        - Lua: SplashDamage(Action.InjurySystem,20,true)

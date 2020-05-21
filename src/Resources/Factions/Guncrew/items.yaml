@@ -39,7 +39,7 @@
       Stats: 
          Fight: 20
   Require:
-    - return this:Has('Laser')
+    - Lua: this:Has('Laser')
 
 - Name: Kit
   MandatoryAdjectives:

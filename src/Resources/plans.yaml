@@ -1,9 +1,10 @@
 - Name: Eat if hungry
   Condition:
-    - return Recipient:Has('89c18233-5250-4445-8799-faa9a888fb7f')
-    - return Recipient:Has('Eat')
+    - Lua: Recipient:Has('89c18233-5250-4445-8799-faa9a888fb7f')
+    - Lua: Recipient:Has('Eat')
 
-  Do: |
+  Do: 
+    Lua: |
         return
             Frame(
                Recipient,
@@ -11,14 +12,15 @@
                0)
 - Name: Pick stuff up
   Condition:
-    - return Room.Items.Count > 0
-    - return Recipient:Has('PickUp')
+    - Lua: Room.Items.Count > 0
+    - Lua: Recipient:Has('PickUp')
   Do: return PickUpFrame(Recipient,FirstOrDefault(Recipient:Get('PickUp')),FirstOrDefault(Room.Items),Room,0)
 - Name: Equip Stuff
   Condition:
-    - return GetFirstEquippableItem(Recipient) ~= nil
-    - return Recipient:Has('EquipmentAction')
-  Do: |
+    - Lua: GetFirstEquippableItem(Recipient) ~= nil
+    - Lua: Recipient:Has('EquipmentAction')
+  Do:
+   Lua: |
         return EquipmentFrame(
            Recipient,
            FirstOrDefault(Recipient:Get('EquipmentAction')),
@@ -27,9 +29,10 @@
         )
 - Name: Fight Enemies
   Condition: 
-    - return Recipient:WorstEnemy(true,-20) ~= nil
-    - return Recipient:Has('Fight')
-  Do: |
+    - Lua: Recipient:WorstEnemy(true,-20) ~= nil
+    - Lua: Recipient:Has('Fight')
+  Do: 
+    Lua: |
         return FightFrame(
            Recipient,
            Recipient:WorstEnemy(true,-20),

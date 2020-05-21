@@ -2,7 +2,7 @@
   Body: 
     - Text: "Greetings {AggressorIfAny}, may the emperor shine on your presence"
   Condition:
-    - return Recipient:AttitudeTo(AggressorIfAny) >= 0
+    - Lua: Recipient:AttitudeTo(AggressorIfAny) >= 0
   Options:
   - Destination: 
     Attitude: 10
@@ -14,7 +14,7 @@
   Body: 
     - Text: "Listen buddy, we aint friends.  I got nothing to say to you"
   Condition:
-    - return Recipient:AttitudeTo(AggressorIfAny) < 0
+    - Lua: Recipient:AttitudeTo(AggressorIfAny) < 0
 
 
 # Wildlife banter  
@@ -23,13 +23,13 @@
     - Text: "Screeeee (this creature seems"
     - Text: friendly)
       Condition: 
-        - return Recipient:AttitudeTo(AggressorIfAny) > 0
+        - Lua: Recipient:AttitudeTo(AggressorIfAny) > 0
     - Text: hostile)
       Condition: 
-        - return Recipient:AttitudeTo(AggressorIfAny) < 0
+        - Lua: Recipient:AttitudeTo(AggressorIfAny) < 0
     - Text: indifferent)
       Condition: 
-        - return Recipient:AttitudeTo(AggressorIfAny) == 0
+        - Lua: Recipient:AttitudeTo(AggressorIfAny) == 0
     
 - Identifier: e088ff6e-60de-4a59-a9d8-b9406a2aed7c
   Body: 
@@ -68,11 +68,12 @@
      Destination: 6ea074f9-ebd2-44e5-880d-de48b674fc3b
    - Text: Kick Over Barrel
      SingleUse: true
+     #Get Fire system and apply it to the room
      Effect: 
-              #Get Fire system and apply it to the room
-            - |
+       - Lua: |
                 World:GetSystem(Guid("3c0dd6d7-1f84-44ad-b446-323bd747b09b"))
                  :Apply(SystemArgs(World,UserInterface,20,World.Player,Room,Round))
+            
    - Text: Leave  
 
 - Identifier: 6ea074f9-ebd2-44e5-880d-de48b674fc3b
@@ -111,13 +112,13 @@
   Options:   
     - Text: I'm gonna turn this ship into a Graveyard
       Effect: 
-        - AggressorIfAny.BaseStats:Increase(Fight, 20)
-        - Recipient.Dialogue.Next = null
+        - Lua: AggressorIfAny.BaseStats:Increase(Fight, 20)
+        - Lua: Recipient.Dialogue.Next = null
     - Text: One day this ship and everyone in it will be mine
       Effect: 
-        - AggressorIfAny.BaseStats:Increase(Coerce,20)
-        - Recipient.Dialogue.Next = null
+        - Lua: AggressorIfAny.BaseStats:Increase(Coerce,20)
+        - Lua: Recipient.Dialogue.Next = null
     - Text: I will know every secret and uncover every lie
       Effect: 
-        - AggressorIfAny.BaseStats:Increase(Savvy,20)
-        - Recipient.Dialogue.Next = null
+        - Lua: AggressorIfAny.BaseStats:Increase(Savvy,20)
+        - Lua: Recipient.Dialogue.Next = null

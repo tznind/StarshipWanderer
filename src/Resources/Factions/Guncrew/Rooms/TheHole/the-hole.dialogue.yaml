@@ -5,4 +5,4 @@
     - Text: Approach Barkeep
       Destination: c9d833c6-c9d2-4821-a5e9-36e21867fc05
       Condition: 
-        - return Room:Has('185f63cc-5c64-400e-aefd-e0a16ea358e8')
+        - Lua: Room:Has('185f63cc-5c64-400e-aefd-e0a16ea358e8')

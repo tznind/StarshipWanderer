@@ -340,19 +340,27 @@
     },
     "InjuryBlueprint": {
       "type": "object",
+      "description": "Describes an injury that can be sustained.  This blueprint can be manifested as Injured adjective instances",
       "additionalProperties": false,
       "properties": {
         "Region": {
-          "$ref": "#/definitions/InjuryRegion"
+          "description": "The body part that the injury applies to or None (default)",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/InjuryRegion"
+            }
+          ]
         },
         "Name": {
           "type": [
             "null",
             "string"
-          ]
+          ],
+          "description": "Player understandable description of the injury e.g. Burnt Arm"
         },
         "Severity": {
           "type": "number",
+          "description": "How severe the injury is, relates to FatalThreshold etc",
           "format": "double"
         }
       }
@@ -449,7 +457,7 @@
             "null"
           ],
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/IEffect"
           }
         },
         "Targets": {
@@ -471,6 +479,11 @@
         }
       }
     },
+    "IEffect": {
+      "type": "object",
+      "x-abstract": true,
+      "additionalProperties": false
+    },
     "IActionTarget": {
       "type": "object",
       "x-abstract": true,
@@ -479,42 +492,9 @@
     "StatsCollection": {
       "title": "DictionaryOfStatAndDouble",
       "type": "object",
-      "x-dictionaryKey": {
-        "$ref": "#/definitions/StatsCollection/definitions/Stat"
-      },
       "additionalProperties": {
         "type": "number",
         "format": "double"
-      },
-      "definitions": {
-        "Stat": {
-          "type": "integer",
-          "description": "0 = None\n1 = Loyalty\n2 = Corruption\n3 = Fight\n4 = Coerce\n5 = Savvy\n6 = Suave\n7 = Leadership\n8 = Initiative\n9 = Value",
-          "x-enumNames": [
-            "None",
-            "Loyalty",
-            "Corruption",
-            "Fight",
-            "Coerce",
-            "Savvy",
-            "Suave",
-            "Leadership",
-            "Initiative",
-            "Value"
-          ],
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9
-          ]
-        }
       }
     },
     "IBehaviour": {
