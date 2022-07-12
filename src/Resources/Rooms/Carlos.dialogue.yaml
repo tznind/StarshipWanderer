@@ -60,7 +60,7 @@
 #Tell about Paw?
 - Identifier: ada60318-3da0-4519-bb26-0afa930e9d3f
   Body:
-    - Text: That's all your getting outta me. He's dead and that's all there is to say
+    - Text: That's all you're getting outta me. He's dead and that's all there is to say.
   Options:
     - Text: May his flesh nourish us
       Attitude: 10
@@ -80,6 +80,6 @@
 #nourish us
 - Identifier: 4a5060e8-f17e-4754-942c-5d4ed86f0c0c
   Body:
-   - Text: As we will nourish those who devour us
+   - Text: As we will nourish those who devour us.
 
 
